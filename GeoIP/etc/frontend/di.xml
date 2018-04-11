@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+Created by Mario HD \o/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Block\Html\Header">
+        <plugin name="html_header_plugin"
+                type="Pengo\GeoIP\Plugin\HtmlHeaderPlugin" sortOrder="20" />
+    </type>
+    <type name="Magento\Theme\Block\Html\Header">
+        <plugin name="html_header_plugin"
+                type="Pengo\GeoIP\Plugin\HtmlHeaderAroundPlugin" sortOrder="10" disabled="false" />
+    </type>
+</config>

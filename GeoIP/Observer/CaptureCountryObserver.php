@@ -52,13 +52,11 @@ class CaptureCountryObserver implements ObserverInterface
 
     public function execute(Observer $observer)
     {
-        //die("ssss");
         if( $this->registry->registry("country_code") ) {
-
+            return;
         }
         // obtener ip
-        $userip = "8.8.8.8";
-        $userip = $this->remoteAddress->getRemoteAddress();
+        $userip = getenv('HTTP_CLIENT_IP');
 
         $url = self::FREEGEOIP_URL . $userip;
 
@@ -82,8 +80,5 @@ class CaptureCountryObserver implements ObserverInterface
         if( !$this->registry->registry("country_code") ) {
             $this->registry->register("country_code", $country_code );
         }
-        echo "<pre>";
-        var_dump( "country_code: " . $this->registry->registry("country_code"));
-        die('Hola mundo');
     }
 }
