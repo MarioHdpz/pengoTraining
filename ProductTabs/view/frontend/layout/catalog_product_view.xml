@@ -6,8 +6,16 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceBlock name="reviews.tab">
-        <block class="Pengo\ProductTabs\Block\InfoTab" name="pengo.info.tab" template="Pengo_ProductTabs::info.phtml" before="-">
+    <!-- Block rendered in Magento/Catalog/view/frontend/templates/product/view/details.phtml -->
+    <referenceBlock name="product.info.details">
+        <block class="Pengo\ProductTabs\Block\InfoTab"
+               name="pengo.info.tab"
+               template="Pengo_ProductTabs::info.phtml"
+               before="-"
+               group="detailed_info">
+            <arguments>
+                <argument name="title" xsi:type="string">Pengo Details</argument>
+            </arguments>
         </block>
     </referenceBlock>
 </page>
